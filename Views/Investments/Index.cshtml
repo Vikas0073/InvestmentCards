@@ -1,0 +1,95 @@
+﻿@model IEnumerable<nextinvesting.Models.Investment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CardImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GetPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecurityType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvestmentMultiple)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maturity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinInvestment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GetPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecurityType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvestmentMultiple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maturity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinInvestment)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-success"asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

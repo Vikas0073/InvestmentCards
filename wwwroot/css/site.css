@@ -1,0 +1,50 @@
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -30%);
+}.photo-container {
+      position: relative;
+      display: inline-block;
+    }
+    .badge-top {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+    }
+    .badge-bottom {
+      position: absolute;
+      top: 20px; /* Adjust this value to position the second badge */
+      left: 80px;
+    }
+.flip:hover {
+    transform: rotateY(180deg);
+}
+
+
+/* ===============================================GRAPH ==========================================*/
+.Graph {
+    background-color: rgb(195, 245, 228);
+    height: 600px;
+}
+
+/* Top right text */
+.top-right {
+    position: relative;
+    top: 8px;
+    right: 16px;
+}.Graph{
+     background-color:#bac8d2;
+ }
+.graphimage {
+    width: 500px;
+}
+
+.footerbg{
+    background-color:#ededed;
+}
+.growingimage{
+    width:500px;
+    height:250px;
+}

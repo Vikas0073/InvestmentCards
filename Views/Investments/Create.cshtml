@@ -1,0 +1,83 @@
+﻿@model nextinvesting.Models.Investment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Investment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tag" class="control-label"></label>
+                <input asp-for="Tag" class="form-control" />
+                <span asp-validation-for="Tag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardImageUrl" class="control-label"></label>
+                <input asp-for="CardImageUrl" class="form-control" />
+                <span asp-validation-for="CardImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label"></label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GetPrice" class="control-label"></label>
+                <input asp-for="GetPrice" class="form-control" />
+                <span asp-validation-for="GetPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecurityType" class="control-label"></label>
+                <input asp-for="SecurityType" class="form-control" />
+                <span asp-validation-for="SecurityType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InvestmentMultiple" class="control-label"></label>
+                <input asp-for="InvestmentMultiple" class="form-control" />
+                <span asp-validation-for="InvestmentMultiple" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Maturity" class="control-label"></label>
+                <input asp-for="Maturity" class="form-control" />
+                <span asp-validation-for="Maturity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinInvestment" class="control-label"></label>
+                <input asp-for="MinInvestment" class="form-control" />
+                <span asp-validation-for="MinInvestment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

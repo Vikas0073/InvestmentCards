@@ -1,0 +1,102 @@
+﻿@model IEnumerable<nextinvesting.Models.Investment>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="Home-image ">
+    <img src="./Images/3.svg" class="d-block w-100  flip" alt="...">
+    <div class="centered">
+        <h1>Meaningful investments in <br> Main Street Businesses </h1>
+        <p>Browse vetted investment offerings in <br>communities all over the US</p>
+        <button class="btn btn-success ps-5 pe-5 pt-2 pb-2" type="submit">Get Started</button>
+    </div>
+</div>
+<div class="text-center container mx-5">
+    <h2 class="mt-5"><b>Offerings open for investment</b></h2>
+    <p class="text-secondary">Explore pre-vetted investment opportunities available in a growing<br /> number of industry categories.</p>
+    <div class="row">
+        
+    @foreach( var item in Model)
+    {
+            <div class="col-4">
+        <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded mt-3" style="width: 25rem;">
+                   
+                    <img class="photo-container " src="~/Images/10.svg" class="card-img-top" alt="...">
+                    <span class="badge bg-white badge-top text-black">Home</span>
+                    <span class="badge bg-white badge-bottom text-black">Business</span>
+
+                    <div class="card-body text-start">
+                        <h5 class="card-title ">@item.Title</h5>
+                        <h6 class="text-secondary ">@item.Location</h6>
+                <p class="">@item.Description</p>
+                        <div class="progress " role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-success " style="width: 40%">
+                    </div>    
+                </div>
+                  <p > <b class="text-success">$@item.GetPrice </b>raised of $@item.TotalPrice</p> 
+                  <div class="Hidetext border-top border-dark border-3">
+                    <table class="table table-borderless">
+                        <tbody>
+                          <tr>
+                            <td class="text-secondary  ">Security Type</td>
+                            <td colspan="3" class="text-dark ">@item.SecurityType</td>
+                          </tr>
+                          <tr>
+                            <td class="text-secondary ">Investment Multiple</td>
+                            <td colspan="3" class="text-end">@item.InvestmentMultiple x</td>
+                          </tr>
+                          <tr>
+                            <td class="text-secondary   ">Maturity</td>
+                            <td colspan="3" class="text-end">@item.Maturity Months</td>
+                          </tr>
+                          <tr>
+                            <td class="text-secondary   ">Min. Investment</td>
+                            <td colspan="3" class="text-end">$@item.MinInvestment</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="d-grid gap-2 col-12 mx-auto">
+                        <button class=" btn  btn-danger">VIEW</button>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+            </div>
+
+   
+    }
+
+    </div>
+    <div class="d-flex justify-content-center">
+        <button class=" btn btn-outline-danger px-5 py-3 ">VIEW ALL PROJECTS</button>
+    </div>
+    @* ----------------------------------------------------------GRAPH------------------------------------------------------------- *@
+        <div class="row text-start mt-5 mb-5">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <h2>$7M+ paid out to investors</h2>
+                <p> Next Invest has already paid out over $7M in cash returns to investors. Earn potential cash payments through unique revenue-share and debt financing investments. </p>
+            </div>
+            <div class="col-4">
+                <img src="~/Images/16.svg" class="growingimage pe-5">
+            </div>
+            <div class="col-2"></div>
+        </div>
+    @* ----------------------------------------------------Apply online------------------------------------------------------------- *@
+
+    <div class="bg-white mt-5">
+    <div class="row text-start mt-5">
+      <div class="col-2"></div>
+        <div class="col-4">
+            <h2>Looking to raise capital<br/> for your growing <br/>business?</h2>
+            <p> Whether expanding or opening a brand-new <br/>concept, we make it easy to raise money from <br/>thousands of local investors </p>
+            <button class="btn btn-success px-5 py-2" type="submit">APPLY ONLINE</button>
+        </div>
+        <div class="col-4">
+            <img src="~/Images/cuate.svg"class="growingimage pe-5">
+        </div>
+            <div class="col-2"></div>
+    </div>
+    </div>
+</div>
